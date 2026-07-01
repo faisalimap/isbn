@@ -7,13 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; }
-        /* Slider Control */
+        .urdu-font { font-family: 'Noto Nastaliq Urdu', serif !important; }
         .switch { position: relative; display: inline-block; width: 60px; height: 30px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #000080; transition: .4s; border-radius: 34px; }
         .slider:before { position: absolute; content: "A"; height: 22px; width: 22px; left: 4px; bottom: 4px; background-color: white; color: #000080; font-weight: bold; text-align: center; line-height: 22px; border-radius: 50%; transition: .4s; }
-        input:checked + .slider:before { content: "ا"; }
+        input:checked + .slider:before { transform: translateX(30px); content: "ا"; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 transition-all duration-300">
@@ -35,71 +34,85 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-6 py-12">
-        <h1 class="text-4xl font-bold mb-8">Welcome to the Network</h1>
-        <p class="text-lg text-slate-600 mb-12">The parent organization powering digital journalism across the Indian Subcontinent.</p>
+        <div id="hero-wrapper" class="text-left transition-all duration-300">
+            <h1 id="hero-title" class="text-4xl font-bold mb-8">Welcome to the Network</h1>
+            <p id="hero-desc" class="text-lg text-slate-600 mb-12">The parent organization powering digital journalism across the Indian Subcontinent.</p>
+        </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <a href="https://abhitak.qzz.io" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <img src="https://abhitak.qzz.io/favicon.png" class="h-10 w-10 mb-4 object-contain">
                 <h3 class="text-lg font-bold">Abhitak</h3>
                 <p class="desc text-xs text-slate-500 mt-2" data-en="Primary Hindi language news and current affairs." data-ur="ہندی زبان میں خبروں اور حالات حاضرہ کا اولین ذریعہ۔"></p>
-            </a>
-            <a href="https://cpbn.qzz.io" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <img src="https://cpbn.qzz.io/favicon.png" class="h-10 w-10 mb-4 object-contain">
                 <h3 class="text-lg font-bold">CPBN</h3>
                 <p class="desc text-xs text-slate-500 mt-2" data-en="Dedicated business and public news coverage." data-ur="کاروباری اور عوامی خبروں کی خصوصی کوریج۔"></p>
-            </a>
-            <a href="https://wbtv.qzz.io" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <img src="https://wbtv.qzz.io/favicon.png" class="h-10 w-10 mb-4 object-contain">
                 <h3 class="text-lg font-bold">WBTV</h3>
                 <p class="desc text-xs text-slate-500 mt-2" data-en="International news with global perspectives." data-ur="عالمی تناظر کے ساتھ بین الاقوامی خبریں۔"></p>
-            </a>
-            <a href="https://digikhabar.qzz.io" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <img src="https://digikhabar.qzz.io/favicon.png" class="h-10 w-10 mb-4 object-contain">
                 <h3 class="text-lg font-bold">DigiKhabar</h3>
                 <p class="desc text-xs text-slate-500 mt-2" data-en="Urdu-dedicated news programming." data-ur="اردو خبروں کی خصوصی نشریات۔"></p>
-            </a>
+            </div>
         </div>
     </main>
 
-    <footer class="bg-[#111111] text-slate-400 text-[11px] py-12 px-6 border-t-4 border-[#000080] mt-16">        
+    <footer class="bg-[#111111] text-slate-300 text-[11px] py-12 px-6 border-t-4 border-[#000080] mt-16">        
         <div class="max-w-7xl mx-auto text-center space-y-5">            
             <div class="text-xs font-black text-white tracking-wider uppercase">INDIAN SUBCONTINENT BROADCASTING NETWORK (ISBN)</div>            
-            <div class="text-xs font-mono tracking-tight" id="contact-line">                
-                Contact Mail: <a href="mailto:info@isbn.qzz.io" class="text-[#000080] hover:text-blue-500 font-bold">info@isbn.qzz.io</a>            
-            </div>            
-            <p class="max-w-4xl mx-auto text-[10px] text-slate-500 leading-relaxed pt-2" id="disclaimer-text">                
-                <strong class="text-[#000080] uppercase" id="disclaimer-heading">Academic Disclaimer Notification:</strong> 
+            <div class="text-xs font-mono tracking-tight" id="footer-contact">Contact Mail: <a href="mailto:info@isbn.qzz.io" class="text-[#4b70f5] hover:text-white font-bold">info@isbn.qzz.io</a></div>            
+            <p class="max-w-4xl mx-auto text-[11px] text-slate-300 leading-relaxed pt-2">                
+                <strong class="text-[#4b70f5] uppercase" id="disclaimer-heading">Academic Disclaimer Notification:</strong> 
                 <span id="disclaimer-body">This simulation matrix constitutes an automated computational deployment framework built exclusively for interface presentation analytics and software performance metrics evaluation. It is strictly non-commercial and holds zero formal corporate alignment with actual broadcast networks. News data payloads are fetched autonomously via verified sandbox API operations.</span>
             </p>            
-            <div class="text-[9px] font-mono tracking-tight text-slate-700 uppercase">System Core Deployment Ref: ISBN-NETWORK-V3.2026</div>            
-            <div class="text-[9px] font-mono tracking-tight text-slate-700">© 2026 Indian Subcontinent Broadcasting Network (ISBN). All Rights Reserved.</div>        
+            <div class="text-[10px] font-mono tracking-tight text-slate-500 uppercase">System Core Deployment Ref: ISBN-NETWORK-V3.2026</div>            
+            <div class="text-[10px] font-mono tracking-tight text-slate-500">© 2026 Indian Subcontinent Broadcasting Network (ISBN). All Rights Reserved.</div>        
         </div>    
     </footer>
 
     <script>
         const toggle = document.getElementById('lang-toggle');
+        const heroWrapper = document.getElementById('hero-wrapper');
+        const heroTitle = document.getElementById('hero-title');
+        const heroDesc = document.getElementById('hero-desc');
         const descriptions = document.querySelectorAll('.desc');
-        const contactLine = document.getElementById('contact-line');
+        const footerContact = document.getElementById('footer-contact');
         const discHeading = document.getElementById('disclaimer-heading');
         const discBody = document.getElementById('disclaimer-body');
 
+        descriptions.forEach(p => p.innerText = p.dataset.en);
+
         toggle.addEventListener('change', () => {
             const isUrdu = toggle.checked;
-            
-            // Apply language to description cards only
+
+            // Hero
+            heroWrapper.className = isUrdu ? "text-right transition-all duration-300" : "text-left transition-all duration-300";
+            heroTitle.innerText = isUrdu ? "نیٹ ورک میں خوش آمدید" : "Welcome to the Network";
+            heroTitle.className = isUrdu ? "text-4xl font-bold mb-8 urdu-font" : "text-4xl font-bold mb-8";
+            heroDesc.innerText = isUrdu ? "برصغیر پاک و ہند میں ڈیجیٹل صحافت کو طاقت دینے والی مادر تنظیم۔" : "The parent organization powering digital journalism across the Indian Subcontinent.";
+            heroDesc.className = isUrdu ? "text-lg text-slate-600 mb-12 urdu-font" : "text-lg text-slate-600 mb-12";
+
+            // Cards
             descriptions.forEach(p => {
                 p.innerText = isUrdu ? p.dataset.ur : p.dataset.en;
-                if(isUrdu) p.classList.add('urdu-font');
-                else p.classList.remove('urdu-font');
+                p.className = isUrdu ? "desc text-xs text-slate-500 mt-2 urdu-font" : "desc text-xs text-slate-500 mt-2";
             });
 
-            // Footer translation
-            contactLine.innerHTML = isUrdu ? "رابطہ ای میل: <a href='mailto:info@isbn.qzz.io' class='text-[#000080] hover:text-blue-500 font-bold'>info@isbn.qzz.io</a>" : "Contact Mail: <a href='mailto:info@isbn.qzz.io' class='text-[#000080] hover:text-blue-500 font-bold'>info@isbn.qzz.io</a>";
+            // Footer
+            footerContact.innerHTML = "Contact Mail: <a href='mailto:info@isbn.qzz.io' class='text-[#4b70f5] hover:text-white font-bold'>info@isbn.qzz.io</a>";
+            footerContact.className = "text-xs font-mono tracking-tight";
+            
             discHeading.innerText = isUrdu ? "تعلیمی دستبرداری نوٹیفکیشن:" : "Academic Disclaimer Notification:";
+            discHeading.className = isUrdu ? "text-[#4b70f5] uppercase urdu-font" : "text-[#4b70f5] uppercase";
+            
             discBody.innerText = isUrdu ? " یہ سمولیشن میٹرکس خاص طور پر انٹرفیس پریزنٹیشن اینالٹکس اور سافٹ ویئر کی کارکردگی کے میٹرکس کی جانچ کے لیے بنایا گیا ایک خودکار کمپیوٹیشنل ڈیپلائمنٹ فریم ورک ہے۔ یہ مکمل طور پر غیر تجارتی ہے اور اصل نشریاتی نیٹ ورکس کے ساتھ اس کا کوئی باضابطہ کارپوریٹ تعلق نہیں ہے۔ نیوز ڈیٹا پے لوڈز تصدیق شدہ سینڈ باکس API آپریشنز کے ذریعے خود بخود حاصل کیے جاتے ہیں۔" : " This simulation matrix constitutes an automated computational deployment framework built exclusively for interface presentation analytics and software performance metrics evaluation. It is strictly non-commercial and holds zero formal corporate alignment with actual broadcast networks. News data payloads are fetched autonomously via verified sandbox API operations.";
-            if(isUrdu) discBody.classList.add('urdu-font');
-            else discBody.classList.remove('urdu-font');
+            discBody.className = isUrdu ? "urdu-font" : "";
         });
     </script>
 </body>
