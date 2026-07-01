@@ -5,69 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISBN | Indian Subcontinent Broadcasting Network</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+        .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; }
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 text-slate-900 transition-all duration-300">
 
-    <!-- Header -->
-    <header class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
-        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="favicon.png" alt="ISBN Logo" class="h-10 w-auto object-contain">
-                <span class="text-xl font-bold tracking-tight">ISBN</span>
+    <header class="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="favicon.png" alt="ISBN Logo" class="h-16 w-16 object-contain">
+                <div class="flex flex-col">
+                    <span class="text-4xl font-black tracking-tighter">ISBN</span>
+                    <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Indian Subcontinent Broadcasting Network</span>
+                </div>
             </div>
-            <a href="mailto:info@isbn.qzz.io" class="text-sm font-medium hover:text-red-700 transition">info@isbn.qzz.io</a>
+            <div>
+                <button id="lang-toggle" class="px-8 py-3 bg-slate-900 text-white rounded-full font-bold text-xs hover:bg-[#cc0000] transition-all duration-300 shadow-lg hover:shadow-red-500/20">
+                    SWITCH TO URDU
+                </button>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-6 py-20 text-center">
-        <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Empowering Information.</h1>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto">The parent network powering the next generation of digital news across the Indian Subcontinent.</p>
-    </section>
-
-    <!-- Subsidiaries Grid -->
-    <section class="max-w-6xl mx-auto px-6 pb-20">
-        <h2 class="text-2xl font-bold mb-10 text-center">Our Subsidiaries</h2>
+    <main id="content" class="max-w-7xl mx-auto px-6 py-12">
+        <h1 id="hero-title" class="text-4xl font-bold mb-8">Welcome to the Network</h1>
+        <p id="hero-desc" class="text-lg text-slate-600 mb-12">Your hub for aggregated intelligence across the Indian Subcontinent.</p>
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <!-- Card Template -->
-            <a href="https://abhitak.qzz.io" class="group bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                <img src="https://abhitak.qzz.io/favicon.png" class="h-12 w-12 mb-6 object-contain">
-                <h3 class="text-lg font-bold mb-2">Abhitak</h3>
-                <p class="text-sm text-slate-500">Primary Hindi language news and current affairs.</p>
+            <a href="https://abhitak.qzz.io" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition">
+                <h3 class="text-lg font-bold">Abhitak</h3>
             </a>
-
-            <a href="https://cpbn.qzz.io" class="group bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                <img src="https://cpbn.qzz.io/favicon.png" class="h-12 w-12 mb-6 object-contain">
-                <h3 class="text-lg font-bold mb-2">CPBN</h3>
-                <p class="text-sm text-slate-500">Dedicated business and public news coverage.</p>
+            <a href="https://cpbn.qzz.io" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition">
+                <h3 class="text-lg font-bold">CPBN</h3>
             </a>
-
-            <a href="https://wbtv.qzz.io" class="group bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                <img src="https://wbtv.qzz.io/favicon.png" class="h-12 w-12 mb-6 object-contain">
-                <h3 class="text-lg font-bold mb-2">WBTV</h3>
-                <p class="text-sm text-slate-500">International news with multi-language support.</p>
+            <a href="https://wbtv.qzz.io" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition">
+                <h3 class="text-lg font-bold">WBTV</h3>
             </a>
-
-            <a href="https://digikhabar.qzz.io" class="group bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                <img src="https://digikhabar.qzz.io/favicon.png" class="h-12 w-12 mb-6 object-contain">
-                <h3 class="text-lg font-bold mb-2">DigiKhabar</h3>
-                <p class="text-sm text-slate-500">Urdu-dedicated news programming.</p>
+            <a href="https://digikhabar.qzz.io" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition">
+                <h3 class="text-lg font-bold">DigiKhabar</h3>
             </a>
-
         </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 py-12">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <p class="text-slate-400 text-sm">© 2026 Indian Subcontinent Broadcasting Network. Engineering Portfolio Project.</p>
-        </div>
+    <footer class="bg-[#111111] text-slate-500 text-[11px] py-10 px-6 border-t-4 border-[#cc0000] mt-16">        
+        <div class="max-w-7xl mx-auto text-center space-y-4">            
+            <div class="text-xs font-black text-slate-200 tracking-wider uppercase">INDIAN SUBCONTINENT BROADCASTING NETWORK (ISBN)</div>            
+            <div class="text-xs font-mono text-slate-400 tracking-tight">                
+                Contact mail: <a href="mailto:info@isbn.qzz.io" class="text-[#cc0000] hover:text-red-400 hover:underline font-bold">info@isbn.qzz.io</a>            
+            </div>            
+            <p class="max-w-4xl mx-auto text-[10px] text-slate-500 leading-relaxed pt-2">                
+                <strong class="text-red-500 uppercase">Academic Disclaimer Notification:</strong> This simulation matrix constitutes an automated computational deployment framework built exclusively for interface presentation analytics and software performance metrics evaluation. It is strictly non-commercial and holds zero formal corporate alignment with actual broadcast networks. News data payloads are fetched autonomously via verified sandbox API operations.            
+            </p>            
+            <div class="text-[9px] text-slate-600 font-mono tracking-tight">System Core Deployment Ref: ISBN-NETWORK-V3.2026</div>            
+            <div class="text-[9px] text-slate-600 font-mono tracking-tight">© 2026 Indian Subcontinent Broadcasting Network (ISBN). All Rights Reserved.</div>        
+        </div>    
     </footer>
 
+    <script>
+        const toggleBtn = document.getElementById('lang-toggle');
+        const content = document.getElementById('content');
+        const heroTitle = document.getElementById('hero-title');
+        const heroDesc = document.getElementById('hero-desc');
+        let isUrdu = false;
+
+        toggleBtn.addEventListener('click', () => {
+            isUrdu = !isUrdu;
+            if (isUrdu) {
+                document.body.classList.add('urdu-font');
+                document.body.dir = "rtl";
+                toggleBtn.innerText = "SWITCH TO ENGLISH";
+                heroTitle.innerText = "نیٹ ورک میں خوش آمدید";
+                heroDesc.innerText = "برصغیر پاک و ہند میں معلومات اور خبروں کا مرکز۔";
+            } else {
+                document.body.classList.remove('urdu-font');
+                document.body.dir = "ltr";
+                toggleBtn.innerText = "SWITCH TO URDU";
+                heroTitle.innerText = "Welcome to the Network";
+                heroDesc.innerText = "Your hub for aggregated intelligence across the Indian Subcontinent.";
+            }
+        });
+    </script>
 </body>
 </html>
