@@ -8,12 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; }
-        /* Switch Slider Styles */
+        /* Slider Control */
         .switch { position: relative; display: inline-block; width: 60px; height: 30px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #000080; transition: .4s; border-radius: 34px; }
         .slider:before { position: absolute; content: "A"; height: 22px; width: 22px; left: 4px; bottom: 4px; background-color: white; color: #000080; font-weight: bold; text-align: center; line-height: 22px; border-radius: 50%; transition: .4s; }
-        input:checked + .slider:before { transform: translateX(30px); content: "ا"; }
+        input:checked + .slider:before { content: "ا"; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 transition-all duration-300">
@@ -34,9 +34,9 @@
         </nav>
     </header>
 
-    <main id="content" class="max-w-7xl mx-auto px-6 py-12">
-        <h1 id="hero-title" class="text-4xl font-bold mb-8">Welcome to the Network</h1>
-        <p id="hero-desc" class="text-lg text-slate-600 mb-12">The parent organization powering digital journalism across the Indian Subcontinent.</p>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <h1 class="text-4xl font-bold mb-8">Welcome to the Network</h1>
+        <p class="text-lg text-slate-600 mb-12">The parent organization powering digital journalism across the Indian Subcontinent.</p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <a href="https://abhitak.qzz.io" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
@@ -62,42 +62,44 @@
         </div>
     </main>
 
-    <footer class="bg-[#111111] text-slate-500 text-[11px] py-10 px-6 border-t-4 border-[#000080] mt-16">        
-        <div class="max-w-7xl mx-auto text-center space-y-4">            
-            <div class="text-xs font-black text-slate-200 tracking-wider uppercase">INDIAN SUBCONTINENT BROADCASTING NETWORK (ISBN)</div>            
-            <div class="text-xs font-mono text-slate-400 tracking-tight" id="contact-line">                
-                Contact mail: <a href="mailto:info@isbn.qzz.io" class="text-[#000080] hover:text-blue-400 font-bold">info@isbn.qzz.io</a>            
+    <footer class="bg-[#111111] text-slate-400 text-[11px] py-12 px-6 border-t-4 border-[#000080] mt-16">        
+        <div class="max-w-7xl mx-auto text-center space-y-5">            
+            <div class="text-xs font-black text-white tracking-wider uppercase">INDIAN SUBCONTINENT BROADCASTING NETWORK (ISBN)</div>            
+            <div class="text-xs font-mono tracking-tight" id="contact-line">                
+                Contact Mail: <a href="mailto:info@isbn.qzz.io" class="text-[#000080] hover:text-blue-500 font-bold">info@isbn.qzz.io</a>            
             </div>            
             <p class="max-w-4xl mx-auto text-[10px] text-slate-500 leading-relaxed pt-2" id="disclaimer-text">                
-                <strong class="text-blue-500 uppercase" id="disclaimer-heading">Academic Disclaimer Notification:</strong> This simulation matrix constitutes an automated computational deployment framework built exclusively for interface presentation analytics and software performance metrics evaluation. It is strictly non-commercial and holds zero formal corporate alignment with actual broadcast networks. News data payloads are fetched autonomously via verified sandbox API operations.            
+                <strong class="text-[#000080] uppercase" id="disclaimer-heading">Academic Disclaimer Notification:</strong> 
+                <span id="disclaimer-body">This simulation matrix constitutes an automated computational deployment framework built exclusively for interface presentation analytics and software performance metrics evaluation. It is strictly non-commercial and holds zero formal corporate alignment with actual broadcast networks. News data payloads are fetched autonomously via verified sandbox API operations.</span>
             </p>            
-            <div class="text-[9px] text-slate-600 font-mono tracking-tight">System Core Deployment Ref: ISBN-NETWORK-V3.2026</div>            
-            <div class="text-[9px] text-slate-600 font-mono tracking-tight">© 2026 Indian Subcontinent Broadcasting Network (ISBN). All Rights Reserved.</div>        
+            <div class="text-[9px] font-mono tracking-tight text-slate-700 uppercase">System Core Deployment Ref: ISBN-NETWORK-V3.2026</div>            
+            <div class="text-[9px] font-mono tracking-tight text-slate-700">© 2026 Indian Subcontinent Broadcasting Network (ISBN). All Rights Reserved.</div>        
         </div>    
     </footer>
 
     <script>
         const toggle = document.getElementById('lang-toggle');
         const descriptions = document.querySelectorAll('.desc');
-        const heroTitle = document.getElementById('hero-title');
-        const heroDesc = document.getElementById('hero-desc');
         const contactLine = document.getElementById('contact-line');
         const discHeading = document.getElementById('disclaimer-heading');
-        const discText = document.getElementById('disclaimer-text');
+        const discBody = document.getElementById('disclaimer-body');
 
         toggle.addEventListener('change', () => {
             const isUrdu = toggle.checked;
-            document.body.className = isUrdu ? "bg-slate-50 text-slate-900 urdu-font" : "bg-slate-50 text-slate-900";
-            document.body.dir = isUrdu ? "rtl" : "ltr";
-
-            heroTitle.innerText = isUrdu ? "نیٹ ورک میں خوش آمدید" : "Welcome to the Network";
-            heroDesc.innerText = isUrdu ? "برصغیر پاک و ہند میں ڈیجیٹل صحافت کو طاقت دینے والی مادر تنظیم۔" : "The parent organization powering digital journalism across the Indian Subcontinent.";
             
-            contactLine.innerHTML = isUrdu ? "رابطہ ای میل: <a href='mailto:info@isbn.qzz.io' class='text-[#000080] hover:text-blue-400 font-bold'>info@isbn.qzz.io</a>" : "Contact mail: <a href='mailto:info@isbn.qzz.io' class='text-[#000080] hover:text-blue-400 font-bold'>info@isbn.qzz.io</a>";
-            discHeading.innerText = isUrdu ? "تعلیمی دستبرداری نوٹیفکیشن:" : "Academic Disclaimer Notification:";
-            discText.childNodes[1].nodeValue = isUrdu ? " یہ سمولیشن میٹرکس خاص طور پر انٹرفیس پریزنٹیشن اینالٹکس اور سافٹ ویئر کی کارکردگی کے میٹرکس کی جانچ کے لیے بنایا گیا ایک خودکار کمپیوٹیشنل ڈیپلائمنٹ فریم ورک ہے۔ یہ مکمل طور پر غیر تجارتی ہے اور اصل نشریاتی نیٹ ورکس کے ساتھ اس کا کوئی باضابطہ کارپوریٹ تعلق نہیں ہے۔ نیوز ڈیٹا پے لوڈز تصدیق شدہ سینڈ باکس API آپریشنز کے ذریعے خود بخود حاصل کیے جاتے ہیں۔" : " This simulation matrix constitutes an automated computational deployment framework built exclusively for interface presentation analytics and software performance metrics evaluation. It is strictly non-commercial and holds zero formal corporate alignment with actual broadcast networks. News data payloads are fetched autonomously via verified sandbox API operations.";
+            // Apply language to description cards only
+            descriptions.forEach(p => {
+                p.innerText = isUrdu ? p.dataset.ur : p.dataset.en;
+                if(isUrdu) p.classList.add('urdu-font');
+                else p.classList.remove('urdu-font');
+            });
 
-            descriptions.forEach(p => p.innerText = isUrdu ? p.dataset.ur : p.dataset.en);
+            // Footer translation
+            contactLine.innerHTML = isUrdu ? "رابطہ ای میل: <a href='mailto:info@isbn.qzz.io' class='text-[#000080] hover:text-blue-500 font-bold'>info@isbn.qzz.io</a>" : "Contact Mail: <a href='mailto:info@isbn.qzz.io' class='text-[#000080] hover:text-blue-500 font-bold'>info@isbn.qzz.io</a>";
+            discHeading.innerText = isUrdu ? "تعلیمی دستبرداری نوٹیفکیشن:" : "Academic Disclaimer Notification:";
+            discBody.innerText = isUrdu ? " یہ سمولیشن میٹرکس خاص طور پر انٹرفیس پریزنٹیشن اینالٹکس اور سافٹ ویئر کی کارکردگی کے میٹرکس کی جانچ کے لیے بنایا گیا ایک خودکار کمپیوٹیشنل ڈیپلائمنٹ فریم ورک ہے۔ یہ مکمل طور پر غیر تجارتی ہے اور اصل نشریاتی نیٹ ورکس کے ساتھ اس کا کوئی باضابطہ کارپوریٹ تعلق نہیں ہے۔ نیوز ڈیٹا پے لوڈز تصدیق شدہ سینڈ باکس API آپریشنز کے ذریعے خود بخود حاصل کیے جاتے ہیں۔" : " This simulation matrix constitutes an automated computational deployment framework built exclusively for interface presentation analytics and software performance metrics evaluation. It is strictly non-commercial and holds zero formal corporate alignment with actual broadcast networks. News data payloads are fetched autonomously via verified sandbox API operations.";
+            if(isUrdu) discBody.classList.add('urdu-font');
+            else discBody.classList.remove('urdu-font');
         });
     </script>
 </body>
