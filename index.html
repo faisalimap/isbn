@@ -40,26 +40,29 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-                <img src="https://isbn.qzz.io/AbhiTak-favicon.png" class="h-10 w-10 mb-4 object-contain">
+            <a href="https://abhitak.qzz.io" target="_blank" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 block text-left">
+                <img src="https://abhitak.qzz.io/favicon.png" class="h-10 w-10 mb-4 object-contain">
                 <h3 class="text-lg font-bold">Abhitak</h3>
                 <p class="desc text-xs text-slate-500 mt-2" data-en="Primary Hindi language news and current affairs." data-ur="ہندی زبان میں خبروں اور حالات حاضرہ کا اولین ذریعہ۔"></p>
-            </div>
-            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-                <img src="https://isbn.qzz.io/CPBN-favicon.png" class="h-10 w-10 mb-4 object-contain">
+            </a>
+
+            <a href="https://cpbn.qzz.io" target="_blank" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 block text-left">
+                <img src="https://cpbn.qzz.io/favicon.png" class="h-10 w-10 mb-4 object-contain">
                 <h3 class="text-lg font-bold">CPBN</h3>
                 <p class="desc text-xs text-slate-500 mt-2" data-en="Dedicated business and public news coverage." data-ur="کاروباری اور عوامی خبروں کی خصوصی کوریج۔"></p>
-            </div>
-            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-                <img src="https://isbn.qzz.io/WBTV-favicon.png" class="h-10 w-10 mb-4 object-contain">
+            </a>
+
+            <a href="https://wbtv.qzz.io" target="_blank" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 block text-left">
+                <img src="https://wbtv.qzz.io/favicon.png" class="h-10 w-10 mb-4 object-contain">
                 <h3 class="text-lg font-bold">WBTV</h3>
                 <p class="desc text-xs text-slate-500 mt-2" data-en="International news with global perspectives." data-ur="عالمی تناظر کے ساتھ بین الاقوامی خبریں۔"></p>
-            </div>
-            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-                <img src="https://isbn.qzz.io/Khabar-favicon.png" class="h-10 w-10 mb-4 object-contain">
+            </a>
+
+            <a href="https://digikhabar.qzz.io" target="_blank" class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 block text-left">
+                <img src="https://digikhabar.qzz.io/favicon.png" class="h-10 w-10 mb-4 object-contain">
                 <h3 class="text-lg font-bold">DigiKhabar</h3>
                 <p class="desc text-xs text-slate-500 mt-2" data-en="Urdu-dedicated news programming." data-ur="اردو خبروں کی خصوصی نشریات۔"></p>
-            </div>
+            </a>
         </div>
     </main>
 
@@ -102,6 +105,14 @@
             descriptions.forEach(p => {
                 p.innerText = isUrdu ? p.dataset.ur : p.dataset.en;
                 p.className = isUrdu ? "desc text-xs text-slate-500 mt-2 urdu-font" : "desc text-xs text-slate-500 mt-2";
+                
+                // Keep text aligned properly when language switches
+                const card = p.closest('a');
+                if (card) {
+                    card.className = isUrdu 
+                        ? "bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 block text-right" 
+                        : "bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 block text-left";
+                }
             });
 
             // Footer
